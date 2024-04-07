@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+
+class ScreenOne extends StatelessWidget {
+  const ScreenOne({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("FIRST SCREEN"),
+      ),
+      body: Center(
+          child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "First Screen");
+              },
+              child: const Text("GO TO SECOND SCREEN"))),
+    );
+  }
+}
+............................SECOND  SCREEN............................
+import 'package:flutter/material.dart';
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("SECOND SCREEN"),
+      ),
+      body: 
+      Center(
+        child: ElevatedButton(
+            onPressed: () {}, child: const Text("GO TO  ThirdScreen")),
+      ),
+    );
+  }
+}
+............................THIRD  SCREEN............................
+import 'package:flutter/material.dart';
+
+class ThirdScreen extends StatelessWidget {
+  const ThirdScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text("back")),
+    );
+  }
+}
